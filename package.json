@@ -1,0 +1,18 @@
+{
+  "name": "timekeeper",
+  "version": "1.0.0",
+  "description": "Tracks record-length Discord voice calls and announces new records.",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}
