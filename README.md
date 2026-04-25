@@ -1,21 +1,18 @@
 # timekeeper
 
-A lightweight Node.js bot that tracks the longest Discord voice call between
-two users and announces new records in a text channel.
+A lightweight Node.js Discord bot that tracks the longest non-empty voice channel state 
+and announces new records in a text channel. The bot will always show as offline in the server
+due to only utilizing Discord's REST API instead of a persistent connection.
 
-**How it works:** The bot polls Discord's REST API every minute to check
-whether either tracked user is in the target voice channel. Session timing
-and the current record are persisted to a local `data/state.json` file.
-Designed to run on a Raspberry Pi (or any always-on machine) via pm2.
+Session timing and the current record are persisted to a local `data/state.json` file.
+Running on a Raspi 2 via pm2, but you can do other things.
 
 ---
 
 ## Prerequisites
 
 - Node.js 18 LTS (because my Raspi 2 is 32-bit and cannot go higher)
-- Discord bot token (see below)
-- pm2 installed globally: `npm install -g pm2`
-
+- Discord bot token
 ---
 
 ## Discord Setup

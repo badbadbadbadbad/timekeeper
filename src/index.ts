@@ -9,12 +9,11 @@ const TRACKED_USER_IDS = process.env.DISCORD_USER_IDS!.split(",").map((id) => id
 
 const POLL_INTERVAL_MS = 60_000; // 1 minute
 
-/** Formats a duration in seconds into a human-readable string like "14h 23m 07s". */
+/** Formats a duration in seconds into a human-readable string like "14h 23m". */
 function formatDuration(totalSeconds: number): string {
-    const hours = Math.floor(totalSeconds / 3600);
+    const hours   = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-    return `${hours}h ${minutes}m ${String(seconds).padStart(2, "0")}s`;
+    return `${hours}h ${minutes}m`;
 }
 
 async function poll(): Promise<void> {
@@ -55,7 +54,7 @@ async function poll(): Promise<void> {
         state.recordSeconds = durationSeconds;
         await postMessage(
             TEXT_CHANNEL_ID,
-            `**New record!** Call time: **${formatDuration(durationSeconds)}**!`
+            `**New record!** Time: **${formatDuration(durationSeconds)}**!`
         );
         console.log(`New record set: ${formatDuration(durationSeconds)}`);
     }
