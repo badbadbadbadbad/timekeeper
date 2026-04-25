@@ -12,7 +12,6 @@ Running on a Raspi 2 via pm2, but you can do other things.
 ## Prerequisites
 
 - Node.js 18 LTS (because my Raspi 2 is 32-bit and cannot go higher)
-- Discord bot token
 ---
 
 ## Discord Setup
@@ -20,7 +19,7 @@ Running on a Raspi 2 via pm2, but you can do other things.
 1. Go to https://discord.com/developers/applications -> **New Application**.
 2. Go to **Bot** -> enable **Server Members Intent** and **Presence Intent**
    under Privileged Gateway Intents.
-3. Copy your bot token to `DISCORD_BOT_TOKEN`.
+3. View / create a bot token in the same view, that is your`DISCORD_BOT_TOKEN`.
 4. Go to **OAuth2 -> URL Generator**. Scopes: `bot`.
    Permissions: `Send Messages`, `View Channels`. Open the generated URL
    and invite the bot to your server.
